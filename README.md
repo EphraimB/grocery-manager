@@ -47,6 +47,7 @@ public void removeRecipe(int recipeID);
 public void updateRecipe(Recipe recipe);
 public void addIngredient(int recipeID, int groceryID, BigDecimal quantity);
 public void removeIngredient(int recipeID, int groceryID);
+public void updateIngredientQuantity(int recipeID, int groceryID, BigDecimal quantity);
 public List<RecipeIngredient> getRecipeIngredients(int recipeID);
 ```
 
@@ -101,3 +102,15 @@ public boolean isCellEditable(int row, int column);
 ```
 
 These methods will control how grocery information appears in the JTable, including retrieving, displaying, and editing individual cell values.
+
+### Look and Feel (View)
+
+The application will use a simple, modern, one-page dashboard with a card-based layout. Each day of the recurring Sunday–Saturday week will be displayed as an individual card. Within each day card, users can add an unlimited number of food or meal cards.
+
+Each food card will display its recipe ingredients as removable chips. Each chip will consist of a styled `JLabel` displaying the ingredient name and a small `JButton` displaying an X, visually integrated into the same chip. Clicking the X will remove the ingredient from that recipe.
+
+An **Add Ingredient** button will open a small `JDialog` popup containing a `JTextField` for searching the grocery database and a `JList` displaying matching grocery items. Users can select an existing grocery, specify its quantity, and add it to the recipe. If an ingredient does not already exist, users will be able to create a new grocery item and save it to the reusable grocery database.
+
+Each food card will display its grocery quantities, calories, protein, and prices, along with combined nutritional and cost totals. Daily and weekly summaries will calculate overall calories, protein, and projected grocery expenses.
+
+The interface will use a clean, minimal design with light backgrounds, subtle colors, and clearly labeled controls for adding, editing, and removing foods and groceries. A `JTable` will be used where appropriate for managing structured grocery information. A clearly visible Excel export button will generate a consolidated shopping list.
