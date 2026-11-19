@@ -114,3 +114,11 @@ An **Add Ingredient** button will open a small `JDialog` popup containing a `JTe
 Each food card will display its grocery quantities, calories, protein, and prices, along with combined nutritional and cost totals. Daily and weekly summaries will calculate overall calories, protein, and projected grocery expenses.
 
 The interface will use a clean, minimal design with light backgrounds, subtle colors, and clearly labeled controls for adding, editing, and removing foods and groceries. A `JTable` will be used where appropriate for managing structured grocery information. A clearly visible Excel export button will generate a consolidated shopping list.
+
+
+## Usage
+
+In order to start the Shopping List GUI program, you need to compile it and then run it with the following commands:
+
+1) ```javac -d out src/*.java src/view/*.java```
+2) ```java -cp out src/Main```
