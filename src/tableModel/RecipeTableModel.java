@@ -36,7 +36,25 @@ public class RecipeTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int row, int col) {
-        return data.get(row);
+        Recipe recipe = data.get(row);
+
+        return switch (col) {
+            case 0 ->
+                recipe.getId();
+            case 1 ->
+                recipe.getIngredients();
+            case 2 ->
+                recipe.getQuantity();
+            case 3 ->
+                recipe.getUnits();
+            default ->
+                null;
+        };
+    }
+
+    @Override
+    public String getColumnName(int column) {
+        return columnNames[column];
     }
 
     @Override
@@ -53,9 +71,8 @@ public class RecipeTableModel extends AbstractTableModel {
         List<Recipe> copy = new ArrayList<>(recipes.size());
 
         for (Recipe recipe : recipes) {
-            copy.add(new Recipe(
-                    recipe.getId(), recipe.getIngredients(),
-                    recipe.getUnits(), recipe.getQuantity()));
+            // copy.add(new Recipe(1, "Brown rice", "cup", 1));
+            copy.add(new Recipe(recipe.getId(), recipe.getIngredients(), recipe.getUnits(), recipe.getQuantity()));
         }
 
         return copy;

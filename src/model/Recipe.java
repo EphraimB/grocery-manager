@@ -2,9 +2,9 @@ package src.model;
 
 public class Recipe {
 
-    private int id;
-    private String ingredients, units;
-    private double quantity;
+    private final int id;
+    private final String ingredients, units;
+    private final double quantity;
 
     public Recipe(int id, String ingredients, String units, double quantity) {
         this.id = id;
