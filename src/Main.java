@@ -1,9 +1,11 @@
 package src;
 
 import java.awt.BorderLayout;
+
 import javax.swing.JFrame;
 import src.controller.Controller;
 import src.view.Header;
+import src.view.MenuBar;
 import src.view.Stepper;
 
 public class Main {
@@ -16,10 +18,11 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Header header = new Header();
-
         Stepper stepper = new Stepper();
+        MenuBar menuBar = new MenuBar();
 
-        frame.add(header, BorderLayout.NORTH);
+        frame.add(menuBar, BorderLayout.NORTH);
+        frame.add(header, BorderLayout.CENTER);
         frame.add(stepper, BorderLayout.CENTER);
 
         //WeekdaysPanel weekdaysPanel = new WeekdaysPanel();
