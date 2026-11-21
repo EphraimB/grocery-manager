@@ -6,9 +6,7 @@ import javax.swing.JTabbedPane;
 public class Stepper extends JTabbedPane {
 
     public Stepper() {
-        Recipes recipes = new Recipes();
-
-        addTab("1) Recipes", recipes);
+        addTab("1) Recipes", new RecipePanel());
         addTab("2) Meals", new JPanel());
     }
 }
