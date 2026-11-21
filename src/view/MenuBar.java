@@ -7,7 +7,7 @@ import javax.swing.JMenuItem;
 public class MenuBar extends JMenuBar {
 
     JMenu fileMenu, editMenu;
-    JMenuItem saveMenuItem, closeMenuItem;
+    JMenuItem saveMenuItem, closeMenuItem, addItem, removeItem;
 
     public MenuBar() {
         // Build the file menu
@@ -24,6 +24,12 @@ public class MenuBar extends JMenuBar {
         // Build the edit menu
         editMenu = new JMenu("Edit");
 
-        
+        addItem = new JMenuItem("Add Item");
+        removeItem = new JMenuItem("Remove Item");
+
+        editMenu.add(addItem);
+        editMenu.add(removeItem);
+
+        add(editMenu);
     }
 }
