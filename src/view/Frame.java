@@ -3,6 +3,7 @@ package src.view;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import src.controller.Controller;
 
 public class Frame extends JFrame {
 
@@ -11,9 +12,10 @@ public class Frame extends JFrame {
         super("Grocery manager");
 
         // Instantiates the components
-        Header header = new Header();
-        Stepper stepper = new Stepper();
         MenuBar menuBar = new MenuBar();
+        Controller controller = new Controller(menuBar);
+        Header header = new Header();
+        Stepper stepper = new Stepper(controller.getRecipeTableModel());
 
         // Add the menu bar to the top
         add(menuBar, BorderLayout.NORTH);

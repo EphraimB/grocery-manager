@@ -32,4 +32,8 @@ public class MenuBar extends JMenuBar {
 
         add(editMenu);
     }
+
+    public JMenuItem getAddItem() {
+        return this.addItem;
+    }
 }
