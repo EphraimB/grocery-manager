@@ -5,14 +5,15 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import model.RecipeListModel;
+import listModel.RecipeListModel;
+import model.RecipeModel;
 
 public class RecipePanel extends JPanel {
 
     public RecipePanel(RecipeListModel model) {
         setLayout(new BorderLayout());
 
-        JList<String> list = new JList<>();
+        JList<RecipeModel> list = new JList<>();
         list.setModel(model);
 
         add(new JScrollPane(list), BorderLayout.CENTER);

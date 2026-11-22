@@ -2,13 +2,14 @@ package controller;
 
 import javax.swing.JOptionPane;
 
-import model.RecipeListModel;
-import tableModel.IngredientsTableModel;
+import listModel.RecipeListModel;
+import model.RecipeModel;
 import view.MenuBar;
 
 public class RecipeController {
 
     private final RecipeListModel recipeListModel;
+    private int id;
 
     public RecipeController(MenuBar menuBar, RecipeListModel recipeListModel) {
         this.recipeListModel = recipeListModel;
@@ -17,11 +18,13 @@ public class RecipeController {
     }
 
     private void addRecipe() {
-        String item = JOptionPane.showInputDialog("Enter the name of the new item.");
+        String item = JOptionPane.showInputDialog("Enter the name of the new recipe.");
 
         // Adds the item to the model
         if (item != null && !item.trim().isEmpty()) {
-            recipeListModel.add(item);
+            RecipeModel recipe = new RecipeModel(id++, item.trim());
+
+            recipeListModel.addElement(recipe);
         }
     }
 

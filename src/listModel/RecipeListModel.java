@@ -1,21 +1,23 @@
-package model;
+package listModel;
 
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultListModel;
+import model.RecipeModel;
 
-public class RecipeListModel extends DefaultListModel<String> {
+public class RecipeListModel extends DefaultListModel<RecipeModel> {
 
-    private final ArrayList<String> recipes = new ArrayList<>();
+    private final ArrayList<RecipeModel> recipes = new ArrayList<>();
 
     /**
      * Constructor
      *
      * @param recipeList A list of recipes
      */
-    public RecipeListModel(String... recipeList) {
+    public RecipeListModel(List<RecipeModel> recipeList) {
         super();
 
-        for (String recipe : recipeList) {
+        for (RecipeModel recipe : recipeList) {
             // Adds the item to the model
             addElement(recipe);
 
@@ -29,7 +31,7 @@ public class RecipeListModel extends DefaultListModel<String> {
      *
      * @param recipe Recipe to add
      */
-    public void add(String recipe) {
+    public void add(RecipeModel recipe) {
         // Adds the item to the model
         addElement(recipe);
 

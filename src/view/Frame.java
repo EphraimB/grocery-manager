@@ -3,9 +3,10 @@ package view;
 import controller.IngredientController;
 import controller.RecipeController;
 import java.awt.BorderLayout;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import model.RecipeListModel;
+import listModel.RecipeListModel;
 
 public class Frame extends JFrame {
 
@@ -15,7 +16,7 @@ public class Frame extends JFrame {
 
         // Instantiates the components
         MenuBar menuBar = new MenuBar();
-        RecipeController recipeController = new RecipeController(menuBar, new RecipeListModel());
+        RecipeController recipeController = new RecipeController(menuBar, new RecipeListModel(new ArrayList<>()));
         IngredientController ingredientController = new IngredientController(menuBar);
         Header header = new Header();
         Stepper stepper = new Stepper(recipeController.getRecipeListModel(), ingredientController.getIngredientsTableModel());

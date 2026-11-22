@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import model.RecipeListModel;
+import listModel.RecipeListModel;
 import tableModel.IngredientsTableModel;
 
 public class Stepper extends JTabbedPane {

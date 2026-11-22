@@ -1,7 +1,7 @@
 package view;
 
 import javax.swing.JSplitPane;
-import model.RecipeListModel;
+import listModel.RecipeListModel;
 import tableModel.IngredientsTableModel;
 
 public class SplitPane extends JSplitPane {
