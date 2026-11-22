@@ -1,14 +1,14 @@
-package src.view;
+package view;
 
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
-import src.tableModel.RecipeTableModel;
+import tableModel.IngredientsTableModel;
 
 public class Stepper extends JTabbedPane {
 
-    public Stepper(RecipeTableModel recipeTableModel) {
-        addTab("1) Recipes", new RecipePanel(recipeTableModel));
+    public Stepper(IngredientsTableModel recipeTableModel) {
+        addTab("1) Recipes", new IngredientsPanel(recipeTableModel));
         addTab("2) Meals", new JPanel());
     }
 }

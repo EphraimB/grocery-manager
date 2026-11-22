@@ -1,17 +1,16 @@
-package src.tableModel;
+package tableModel;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
+import model.IngredientsModel;
 
-import src.model.RecipeModel;
-
-public class RecipeTableModel extends AbstractTableModel {
+public class IngredientsTableModel extends AbstractTableModel {
 
     private final String[] columnNames = {
         "id", "Ingredients", "Quantity", "Units"
     };
-    private List<RecipeModel> recipes = new ArrayList<>();
+    private List<IngredientsModel> ingredients = new ArrayList<>();
     private int id = 1;
 
     /*= {
@@ -21,13 +20,13 @@ public class RecipeTableModel extends AbstractTableModel {
         {4, "Salmon", 1 / 4, "pound"},
         {5, "Seaweed", 1, "piece"}
     };*/
-    public RecipeTableModel(List<RecipeModel> recipes) {
-        this.recipes = copyRecipes(recipes);
+    public IngredientsTableModel(List<IngredientsModel> ingredients) {
+        this.ingredients = copyIngredients(ingredients);
     }
 
     @Override
     public int getRowCount() {
-        return recipes.size();
+        return ingredients.size();
     }
 
     @Override
@@ -37,17 +36,17 @@ public class RecipeTableModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int row, int col) {
-        RecipeModel recipeModel = recipes.get(row);
+        IngredientsModel ingredientsModel = ingredients.get(row);
 
         return switch (col) {
             case 0 ->
-                recipeModel.getId();
+                ingredientsModel.getId();
             case 1 ->
-                recipeModel.getIngredients();
+                ingredientsModel.getIngredients();
             case 2 ->
-                recipeModel.getQuantity();
+                ingredientsModel.getQuantity();
             case 3 ->
-                recipeModel.getUnits();
+                ingredientsModel.getUnits();
             default ->
                 null;
         };
@@ -55,17 +54,17 @@ public class RecipeTableModel extends AbstractTableModel {
 
     @Override
     public void setValueAt(Object value, int row, int col) {
-        RecipeModel recipeModel = recipes.get(row);
+        IngredientsModel ingredientsModel = ingredients.get(row);
 
         switch (col) {
             case 1:
-                recipeModel.setIngredients(value.toString());
+                ingredientsModel.setIngredients(value.toString());
                 break;
             case 2:
-                recipeModel.setQuantity(Double.parseDouble(value.toString()));
+                ingredientsModel.setQuantity(Double.parseDouble(value.toString()));
                 break;
             case 3:
-                recipeModel.setUnits(value.toString());
+                ingredientsModel.setUnits(value.toString());
                 break;
         }
 
@@ -87,22 +86,22 @@ public class RecipeTableModel extends AbstractTableModel {
         return col != 0;
     }
 
-    private static List<RecipeModel> copyRecipes(List<RecipeModel> recipes) {
-        List<RecipeModel> copy = new ArrayList<>(recipes.size());
+    private static List<IngredientsModel> copyIngredients(List<IngredientsModel> ingredients) {
+        List<IngredientsModel> copy = new ArrayList<>(ingredients.size());
 
-        for (RecipeModel recipe : recipes) {
-            copy.add(new RecipeModel(recipe.getId(), recipe.getIngredients(), recipe.getQuantity(), recipe.getUnits()
+        for (IngredientsModel ingredient : ingredients) {
+            copy.add(new IngredientsModel(ingredient.getId(), ingredient.getIngredients(), ingredient.getQuantity(), ingredient.getUnits()
             ));
         }
 
         return copy;
     }
 
-    public void addRecipe(RecipeModel recipe) {
-        recipe.setId(id++);
-        recipes.add(recipe);
+    public void addIngredient(IngredientsModel ingredient) {
+        ingredient.setId(id++);
+        ingredients.add(ingredient);
 
-        int row = recipes.size() - 1;
+        int row = ingredients.size() - 1;
 
         fireTableRowsInserted(row, row);
     }

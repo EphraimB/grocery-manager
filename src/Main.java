@@ -1,6 +1,5 @@
-package src;
 
-import src.view.Frame;
+import view.Frame;
 
 import javax.swing.SwingUtilities;
 
@@ -11,7 +10,6 @@ public class Main {
             Frame frame = new Frame();
 
             //WeekdaysPanel weekdaysPanel = new WeekdaysPanel();
-            
             // Makes the frame visible
             frame.setVisible(true);
         });

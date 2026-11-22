@@ -1,4 +1,4 @@
-package src.view;
+package view;
 
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -7,7 +7,7 @@ import javax.swing.JMenuItem;
 public class MenuBar extends JMenuBar {
 
     JMenu fileMenu, editMenu;
-    JMenuItem saveMenuItem, closeMenuItem, addItem, removeItem;
+    JMenuItem saveMenuItem, closeMenuItem, addIngredient, removeIngredient;
 
     public MenuBar() {
         // Build the file menu
@@ -24,16 +24,16 @@ public class MenuBar extends JMenuBar {
         // Build the edit menu
         editMenu = new JMenu("Edit");
 
-        addItem = new JMenuItem("Add Item");
-        removeItem = new JMenuItem("Remove Item");
+        addIngredient = new JMenuItem("Add Ingredient");
+        removeIngredient = new JMenuItem("Remove Ingredient");
 
-        editMenu.add(addItem);
-        editMenu.add(removeItem);
+        editMenu.add(addIngredient);
+        editMenu.add(removeIngredient);
 
         add(editMenu);
     }
 
-    public JMenuItem getAddItem() {
-        return this.addItem;
+    public JMenuItem getAddIngredient() {
+        return this.addIngredient;
     }
 }

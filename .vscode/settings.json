@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "/Users/ephraimbecker/Documents/Fall 2026 semester/Graphical user interface/grocery-manager/lib/hsqldb.jar"
+    ],
+    "java.project.sourcePaths": [
+        "src"
+    ]
+}

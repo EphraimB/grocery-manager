@@ -1,12 +1,12 @@
-package src.model;
+package model;
 
-public class RecipeModel {
+public class IngredientsModel {
 
     private int id;
     private String ingredients, units;
     private double quantity;
 
-    public RecipeModel(int id, String ingredients, double quantity, String units) {
+    public IngredientsModel(int id, String ingredients, double quantity, String units) {
         this.id = id;
         this.ingredients = ingredients;
         this.quantity = quantity;
