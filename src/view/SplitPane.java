@@ -7,6 +7,6 @@ public class SplitPane extends JSplitPane {
 
     public SplitPane(IngredientsTableModel ingredientsTableModel) {
         super(JSplitPane.HORIZONTAL_SPLIT,
-                null, new IngredientsPanel(ingredientsTableModel));
+                new RecipePanel(), new IngredientsPanel(ingredientsTableModel));
     }
 }

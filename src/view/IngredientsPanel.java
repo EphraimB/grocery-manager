@@ -20,8 +20,6 @@ public class IngredientsPanel extends JPanel {
                 .getColumn(3)
                 .setCellEditor(new DefaultCellEditor(unitComboBox));
 
-        System.out.println(ingredientsTable.getCellEditor().getClass());
-
         add(new JScrollPane(ingredientsTable));
     }
 }
