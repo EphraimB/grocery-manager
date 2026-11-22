@@ -12,9 +12,11 @@ public class Header extends JPanel {
 
         JLabel title = new JLabel("Grocery manager");
         title.setFont(new Font("Tahoma", Font.BOLD, 18));
+        title.setAlignmentX(CENTER_ALIGNMENT);
         add(title);
 
         JLabel subtitle = new JLabel("A weekly grocery manager for people that don't know where to begin");
+        subtitle.setAlignmentX(CENTER_ALIGNMENT);
         add(subtitle);
 
     }

@@ -9,7 +9,7 @@ import model.IngredientsModel;
 public class RecipePanel extends JPanel {
 
     public RecipePanel() {
-        JList<IngredientsModel> list = new JList<>();
+        JList list = new JList<>();
 
         add(new JScrollPane(list));
     }
