@@ -6,8 +6,8 @@ import javax.swing.JMenuItem;
 
 public class MenuBar extends JMenuBar {
 
-    JMenu fileMenu, editMenu;
-    JMenuItem saveMenuItem, closeMenuItem, addIngredient, removeIngredient;
+    JMenu fileMenu, editMenu, recipe, ingredient;
+    JMenuItem saveMenuItem, closeMenuItem, addIngredient, removeIngredient, addRecipe, removeRecipe;
 
     public MenuBar() {
         // Build the file menu
@@ -24,11 +24,26 @@ public class MenuBar extends JMenuBar {
         // Build the edit menu
         editMenu = new JMenu("Edit");
 
+        // Build the Recipe submenu
+        recipe = new JMenu("Recipe");
+
+        addRecipe = new JMenuItem("Add Recipe");
+        removeRecipe = new JMenuItem("Remove Recipe");
+
+        recipe.add(addRecipe);
+        recipe.add(removeRecipe);
+
+        // Build the Ingredient submenu
+        ingredient = new JMenu("Ingredient");
+
         addIngredient = new JMenuItem("Add Ingredient");
         removeIngredient = new JMenuItem("Remove Ingredient");
 
-        editMenu.add(addIngredient);
-        editMenu.add(removeIngredient);
+        ingredient.add(addIngredient);
+        ingredient.add(removeIngredient);
+
+        editMenu.add(recipe);
+        editMenu.add(ingredient);
 
         add(editMenu);
     }
