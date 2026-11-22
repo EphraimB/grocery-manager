@@ -40,16 +40,16 @@ public class RecipeListModel extends DefaultListModel<RecipeModel> {
     }
 
     /**
+     * Removes the item at the id
      *
-     * Removes the item
-     *
-     * @param index The item to remove
+     * @param id The id of the item to remove
      */
-    public void removeItem(int index) {
-        // Checks if the index is at least 0 and is less than the the total items
-        if (index >= 0 && index < getSize()) {
-            // Removes the item at the index
-            remove(index);
+    public void removeRecipe(int id) {
+        for (int i = 0; i < getSize(); i++) {
+            if (getElementAt(i).getId() == id) {
+                removeElementAt(i);
+                break;
+            }
         }
     }
 }

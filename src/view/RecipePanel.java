@@ -10,12 +10,17 @@ import model.RecipeModel;
 
 public class RecipePanel extends JPanel {
 
+    private final JList<RecipeModel> list;
+
     public RecipePanel(RecipeListModel model) {
         setLayout(new BorderLayout());
 
-        JList<RecipeModel> list = new JList<>();
-        list.setModel(model);
+        list = new JList<>(model);
 
         add(new JScrollPane(list), BorderLayout.CENTER);
+    }
+
+    public JList<RecipeModel> getRecipeList() {
+        return list;
     }
 }
