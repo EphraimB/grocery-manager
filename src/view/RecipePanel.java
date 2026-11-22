@@ -1,16 +1,20 @@
 package view;
 
+import java.awt.BorderLayout;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import model.IngredientsModel;
+import model.RecipeListModel;
 
 public class RecipePanel extends JPanel {
 
-    public RecipePanel() {
-        JList list = new JList<>();
+    public RecipePanel(RecipeListModel model) {
+        setLayout(new BorderLayout());
 
-        add(new JScrollPane(list));
+        JList<String> list = new JList<>();
+        list.setModel(model);
+
+        add(new JScrollPane(list), BorderLayout.CENTER);
     }
 }

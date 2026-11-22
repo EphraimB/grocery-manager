@@ -51,4 +51,8 @@ public class MenuBar extends JMenuBar {
     public JMenuItem getAddIngredient() {
         return this.addIngredient;
     }
+
+    public JMenuItem getAddRecipe() {
+        return this.addRecipe;
+    }
 }

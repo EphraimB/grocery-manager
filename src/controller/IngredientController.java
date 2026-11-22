@@ -18,8 +18,8 @@ public class IngredientController {
     }
 
     private void addIngredient() {
-        IngredientsModel recipe = new IngredientsModel(0, "", 0.0, Unit.NONE);
-        ingredientsTableModel.addIngredient(recipe);
+        IngredientsModel ingredientModel = new IngredientsModel(0, "", 0.0, Unit.NONE);
+        ingredientsTableModel.addIngredient(ingredientModel);
     }
 
     public IngredientsTableModel getIngredientsTableModel() {

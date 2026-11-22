@@ -1,9 +1,11 @@
 package view;
 
 import controller.IngredientController;
+import controller.RecipeController;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import model.RecipeListModel;
 
 public class Frame extends JFrame {
 
@@ -13,9 +15,10 @@ public class Frame extends JFrame {
 
         // Instantiates the components
         MenuBar menuBar = new MenuBar();
+        RecipeController recipeController = new RecipeController(menuBar, new RecipeListModel());
         IngredientController ingredientController = new IngredientController(menuBar);
         Header header = new Header();
-        Stepper stepper = new Stepper(ingredientController.getIngredientsTableModel());
+        Stepper stepper = new Stepper(recipeController.getRecipeListModel(), ingredientController.getIngredientsTableModel());
 
         // Add the menu bar to the top
         add(menuBar, BorderLayout.NORTH);
