@@ -70,8 +70,19 @@ public class IngredientsTableModel extends AbstractTableModel {
     }
 
     @Override
-    public Class<?> getColumnClass(int c) {
-        return getValueAt(0, c).getClass();
+    public Class<?> getColumnClass(int column) {
+        switch (column) {
+            case 0:
+                return Integer.class;
+            case 1:
+                return String.class;
+            case 2:
+                return Double.class;
+            case 3:
+                return Unit.class;
+            default:
+                return Object.class;
+        }
     }
 
     @Override

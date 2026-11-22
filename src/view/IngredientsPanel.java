@@ -1,22 +1,27 @@
 package view;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import javax.swing.DefaultCellEditor;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-
-import model.IngredientsModel;
+import model.Unit;
 import tableModel.IngredientsTableModel;
 
 public class IngredientsPanel extends JPanel {
 
-    List<IngredientsModel> initData = new ArrayList<>();
-
     public IngredientsPanel(IngredientsTableModel recipeTableModel) {
-        JTable recipeTable = new JTable(recipeTableModel);
+        JTable ingredientsTable = new JTable(recipeTableModel);
 
-        add(new JScrollPane(recipeTable));
+        JComboBox<Unit> unitComboBox
+                = new JComboBox<>(Unit.values());
+
+        ingredientsTable.getColumnModel()
+                .getColumn(3)
+                .setCellEditor(new DefaultCellEditor(unitComboBox));
+
+        System.out.println(ingredientsTable.getCellEditor().getClass());
+
+        add(new JScrollPane(ingredientsTable));
     }
 }
