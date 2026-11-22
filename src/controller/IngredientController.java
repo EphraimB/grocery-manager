@@ -3,6 +3,7 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 import model.IngredientsModel;
+import model.Unit;
 import tableModel.IngredientsTableModel;
 import view.MenuBar;
 
@@ -17,7 +18,7 @@ public class IngredientController {
     }
 
     private void addIngredient() {
-        IngredientsModel recipe = new IngredientsModel(0, "", 0.0, "");
+        IngredientsModel recipe = new IngredientsModel(0, "", 0.0, Unit.NONE);
         ingredientsTableModel.addIngredient(recipe);
     }
 

@@ -3,10 +3,19 @@ package model;
 public class IngredientsModel {
 
     private int id;
-    private String ingredients, units;
+    private String ingredients;
     private double quantity;
+    private Unit units;
 
-    public IngredientsModel(int id, String ingredients, double quantity, String units) {
+    /**
+     * Constructor
+     *
+     * @param id The id
+     * @param ingredients The ingredient
+     * @param quantity The quantity
+     * @param units
+     */
+    public IngredientsModel(int id, String ingredients, double quantity, Unit units) {
         this.id = id;
         this.ingredients = ingredients;
         this.quantity = quantity;
@@ -25,7 +34,7 @@ public class IngredientsModel {
         return this.quantity;
     }
 
-    public String getUnits() {
+    public Unit getUnits() {
         return this.units;
     }
 
@@ -41,7 +50,7 @@ public class IngredientsModel {
         this.quantity = quantity;
     }
 
-    public void setUnits(String units) {
+    public void setUnits(Unit units) {
         this.units = units;
     }
 }

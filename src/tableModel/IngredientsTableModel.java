@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import model.IngredientsModel;
+import model.Unit;
 
 public class IngredientsTableModel extends AbstractTableModel {
 
@@ -13,13 +14,6 @@ public class IngredientsTableModel extends AbstractTableModel {
     private List<IngredientsModel> ingredients = new ArrayList<>();
     private int id = 1;
 
-    /*= {
-        {1, "Brown rice", 1, "cup"},
-        {2, "Cucumber", .5, "piece"},
-        {3, "Avocado", .5, "piece"},
-        {4, "Salmon", 1 / 4, "pound"},
-        {5, "Seaweed", 1, "piece"}
-    };*/
     public IngredientsTableModel(List<IngredientsModel> ingredients) {
         this.ingredients = copyIngredients(ingredients);
     }
@@ -55,7 +49,6 @@ public class IngredientsTableModel extends AbstractTableModel {
     @Override
     public void setValueAt(Object value, int row, int col) {
         IngredientsModel ingredientsModel = ingredients.get(row);
-
         switch (col) {
             case 1:
                 ingredientsModel.setIngredients(value.toString());
@@ -64,7 +57,7 @@ public class IngredientsTableModel extends AbstractTableModel {
                 ingredientsModel.setQuantity(Double.parseDouble(value.toString()));
                 break;
             case 3:
-                ingredientsModel.setUnits(value.toString());
+                ingredientsModel.setUnits((Unit) value);
                 break;
         }
 
