@@ -5,12 +5,11 @@ import javax.swing.JOptionPane;
 import listModel.RecipeListModel;
 import model.RecipeModel;
 import view.MenuBar;
-import view.RecipePanel;
 
 public class RecipeController {
 
-    private RecipePanel recipePanel;
     private final RecipeListModel recipeListModel;
+    private RecipeModel selectedRecipe;
 
     private int id;
 
@@ -19,6 +18,10 @@ public class RecipeController {
 
         menuBar.getAddRecipe().addActionListener(event -> addRecipe());
         menuBar.getRemoveRecipe().addActionListener(event -> removeRecipe());
+    }
+
+    public void setSelectedRecipe(RecipeModel recipe) {
+        selectedRecipe = recipe;
     }
 
     private void addRecipe() {
@@ -33,10 +36,9 @@ public class RecipeController {
     }
 
     private void removeRecipe() {
-        RecipeModel selected = recipePanel.getRecipeList().getSelectedValue();
-
-        if (selected != null) {
-            recipeListModel.removeRecipe(selected.getId());
+        if (selectedRecipe != null) {
+            recipeListModel.removeRecipe(selectedRecipe.getId());
+            selectedRecipe = null;
         }
     }
 

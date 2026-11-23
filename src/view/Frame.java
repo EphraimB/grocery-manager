@@ -19,7 +19,11 @@ public class Frame extends JFrame {
         RecipeController recipeController = new RecipeController(menuBar, new RecipeListModel(new ArrayList<>()));
         IngredientController ingredientController = new IngredientController(menuBar);
         Header header = new Header();
-        Stepper stepper = new Stepper(recipeController.getRecipeListModel(), ingredientController.getIngredientsTableModel());
+        Stepper stepper = new Stepper(
+                recipeController.getRecipeListModel(),
+                ingredientController.getIngredientsTableModel(),
+                recipeController
+        );
 
         // Add the menu bar to the top
         add(menuBar, BorderLayout.NORTH);
