@@ -21,6 +21,8 @@ public class SplitPane extends JSplitPane {
         RecipePanel recipePanel = new RecipePanel(
                 recipeListModel,
                 selectedRecipe -> {
+                    recipeController.setSelectedRecipe(selectedRecipe);
+
                     if (selectedRecipe == null) {
                         ingredientsPanel.showPlaceholder();
                     } else {
