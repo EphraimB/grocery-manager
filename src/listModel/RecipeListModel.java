@@ -52,4 +52,8 @@ public class RecipeListModel extends DefaultListModel<RecipeModel> {
             }
         }
     }
+
+    public int getRowCount() {
+        return recipes.size();
+    }
 }

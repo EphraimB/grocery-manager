@@ -25,6 +25,8 @@ public class RecipePanel extends JPanel {
             }
         });
 
+        onRecipeSelected.accept(list.getSelectedValue());
+
         add(new JScrollPane(list), BorderLayout.CENTER);
     }
 
