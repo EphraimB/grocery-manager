@@ -1,10 +1,8 @@
-package tableModel;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
-import model.IngredientsModel;
-import model.Unit;
 
 public class IngredientsTableModel extends AbstractTableModel {
 

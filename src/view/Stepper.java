@@ -3,8 +3,8 @@ package view;
 import controller.RecipeController;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import listModel.RecipeListModel;
-import tableModel.IngredientsTableModel;
+import model.IngredientsTableModel;
+import model.RecipeListModel;
 
 public class Stepper extends JTabbedPane {
 

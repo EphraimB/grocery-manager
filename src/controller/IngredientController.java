@@ -3,8 +3,8 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 import model.IngredientsModel;
+import model.IngredientsTableModel;
 import model.Unit;
-import tableModel.IngredientsTableModel;
 import view.MenuBar;
 
 public class IngredientController {

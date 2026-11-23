@@ -2,7 +2,7 @@ package controller;
 
 import javax.swing.JOptionPane;
 
-import listModel.RecipeListModel;
+import model.RecipeListModel;
 import model.RecipeModel;
 import view.MenuBar;
 

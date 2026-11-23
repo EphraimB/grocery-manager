@@ -1,9 +1,8 @@
-package listModel;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
-import model.RecipeModel;
 
 public class RecipeListModel extends DefaultListModel<RecipeModel> {
 

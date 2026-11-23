@@ -7,7 +7,7 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import listModel.RecipeListModel;
+import model.RecipeListModel;
 import model.RecipeModel;
 
 public class RecipePanel extends JPanel {
