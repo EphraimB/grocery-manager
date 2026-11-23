@@ -16,3 +16,6 @@ https://chatgpt.com/share/6b02d016-243c-83ea-ba64-3bb5ce0dc353
 
 I got help with the Recipe Controller with ChatGPT:
 https://chatgpt.com/share/6b038e48-9254-83e9-b009-43665e6cafb8
+
+I used ChatGPT to help me with placeholders when a recipe isn't selected:
+https://chatgpt.com/share/6b040e2e-6db8-83ea-bb5d-dcc1425024dd
