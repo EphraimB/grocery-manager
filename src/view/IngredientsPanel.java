@@ -43,7 +43,7 @@ public class IngredientsPanel extends JPanel {
 
         add(cards, BorderLayout.CENTER);
 
-        showPlaceholder();
+        cardLayout.show(cards, EMPTY);
     }
 
     public void showPlaceholder() {
