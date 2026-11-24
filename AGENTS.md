@@ -19,3 +19,6 @@ https://chatgpt.com/share/6b038e48-9254-83e9-b009-43665e6cafb8
 
 I used ChatGPT to help me with placeholders when a recipe isn't selected:
 https://chatgpt.com/share/6b040e2e-6db8-83ea-bb5d-dcc1425024dd
+
+I used ChatGPT to guide me through databases for persistency due to time constraints:
+https://chatgpt.com/share/6b0559c6-2d00-83ea-8c73-21a876a34e2c
