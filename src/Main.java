@@ -1,17 +1,25 @@
 
-import view.Frame;
-
+import database.DatabaseManager;
+import java.sql.SQLException;
 import javax.swing.SwingUtilities;
+import view.Frame;
 
 public class Main {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            Frame frame = new Frame();
+            DatabaseManager databaseManager = new DatabaseManager();
 
-            //WeekdaysPanel weekdaysPanel = new WeekdaysPanel();
-            // Makes the frame visible
-            frame.setVisible(true);
+            try {
+                databaseManager.initializeDatabase();
+
+                Frame frame = new Frame();
+
+                // Makes the frame visible
+                frame.setVisible(true);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         });
     }
 }
