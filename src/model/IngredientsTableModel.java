@@ -6,13 +6,20 @@ import javax.swing.table.AbstractTableModel;
 
 public class IngredientsTableModel extends AbstractTableModel {
 
+    // Class fields
     private final String[] columnNames = {
         "id", "Ingredients", "Quantity", "Units"
     };
     private List<IngredientsModel> ingredients = new ArrayList<>();
     private int id = 1;
 
+    /**
+     * Constructor
+     *
+     * @param ingredients A list of ingredients
+     */
     public IngredientsTableModel(List<IngredientsModel> ingredients) {
+        // Sets the ingredients to a copy of the ingredients
         this.ingredients = copyIngredients(ingredients);
     }
 
@@ -30,6 +37,7 @@ public class IngredientsTableModel extends AbstractTableModel {
     public Object getValueAt(int row, int col) {
         IngredientsModel ingredientsModel = ingredients.get(row);
 
+        // Returns the correct column accordingly
         return switch (col) {
             case 0 ->
                 ingredientsModel.getId();
@@ -47,64 +55,87 @@ public class IngredientsTableModel extends AbstractTableModel {
     @Override
     public void setValueAt(Object value, int row, int col) {
         IngredientsModel ingredientsModel = ingredients.get(row);
+
+        // Sets the values of the columns accordingly to the column value
         switch (col) {
-            case 1:
+            case 1 ->
                 ingredientsModel.setIngredients(value.toString());
-                break;
-            case 2:
+            case 2 ->
                 ingredientsModel.setQuantity(Double.parseDouble(value.toString()));
-                break;
-            case 3:
+            case 3 ->
                 ingredientsModel.setUnits((Unit) value);
-                break;
         }
 
+        // Updates the table cells
         fireTableCellUpdated(row, col);
     }
 
     @Override
     public String getColumnName(int column) {
+        // Returns the column names
         return columnNames[column];
     }
 
     @Override
     public Class<?> getColumnClass(int column) {
-        switch (column) {
-            case 0:
-                return Integer.class;
-            case 1:
-                return String.class;
-            case 2:
-                return Double.class;
-            case 3:
-                return Unit.class;
-            default:
-                return Object.class;
-        }
+        return switch (column) {
+            case 0 ->
+                Integer.class;
+            case 1 ->
+                String.class;
+            case 2 ->
+                Double.class;
+            case 3 ->
+                Unit.class;
+            default ->
+                Object.class;
+        };
     }
 
     @Override
     public boolean isCellEditable(int row, int col) {
+        // Makes every column except the first one editable
         return col != 0;
     }
 
+    /**
+     * Copies the ingredients
+     *
+     * @param ingredients A list of ingredients
+     *
+     * @return A list of ingredients
+     */
     private static List<IngredientsModel> copyIngredients(List<IngredientsModel> ingredients) {
+        // Initializes an ArrayList with a size of the capacity of the ingredients
         List<IngredientsModel> copy = new ArrayList<>(ingredients.size());
 
+        // Loops through the ingredients
         for (IngredientsModel ingredient : ingredients) {
+            // Adds the initialized ingredients model to the list of ingredients
             copy.add(new IngredientsModel(ingredient.getId(), ingredient.getIngredients(), ingredient.getQuantity(), ingredient.getUnits()
             ));
         }
 
+        // Returns the copied list of ingredients
         return copy;
     }
 
+    /**
+     * Adds an ingredient to the model
+     *
+     * @param ingredient The ingredient model
+     */
     public void addIngredient(IngredientsModel ingredient) {
+        // Sets the id on the ingredients model with it incremented
         ingredient.setId(id++);
+
+        // Adds the ingredient to the ingredients
         ingredients.add(ingredient);
 
+        // Sets the row to the ingredients size
         int row = ingredients.size() - 1;
 
+        // Updates the inserted row cell
         fireTableRowsInserted(row, row);
     }
 }

@@ -2,6 +2,7 @@ package model;
 
 public class IngredientsModel {
 
+    // Class fields
     private int id;
     private String ingredients;
     private double quantity;
@@ -22,6 +23,7 @@ public class IngredientsModel {
         this.units = units;
     }
 
+    // Getters
     public int getId() {
         return this.id;
     }
@@ -42,6 +44,7 @@ public class IngredientsModel {
         this.id = id;
     }
 
+    // Setters
     public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
