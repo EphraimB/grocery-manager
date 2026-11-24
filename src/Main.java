@@ -2,6 +2,14 @@
 import javax.swing.SwingUtilities;
 import view.Frame;
 
+/**
+ *
+ * Main.java
+ *
+ * Author: Ephraim Becker
+ *
+ * Driver class
+ */
 public class Main {
 
     public static void main(String[] args) {
