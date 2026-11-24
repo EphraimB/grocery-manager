@@ -1,12 +1,12 @@
 package database;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
 import model.RecipeModel;
 
 public class RecipeDAO {
@@ -34,5 +34,28 @@ public class RecipeDAO {
 
             return recipes;
         }
+    }
+
+    public RecipeModel getOne(int id) throws SQLException {
+        String query = "SELECT * FROM recipes WHERE recipe_id = ?";
+
+        try (
+                Connection conn = databaseManager.getConnection(); PreparedStatement stmt = conn.prepareStatement(query);) {
+
+            stmt.setInt(1, id);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+
+                if (rs.next()) {
+                    int recipeId = rs.getInt("id");
+                    String name = rs.getString("name");
+
+                    return new RecipeModel(recipeId, name);
+
+                }
+            }
+        }
+
+        return null;
     }
 }
