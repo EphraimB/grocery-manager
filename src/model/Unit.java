@@ -1,5 +1,13 @@
 package model;
 
+/**
+ *
+ * Unit.java
+ *
+ * Author: Ephraim Becker
+ *
+ * Defines the units for the combo box
+ */
 public enum Unit {
 
     NONE("Select unit", MeasurementType.NONE),

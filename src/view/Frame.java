@@ -8,17 +8,32 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import model.RecipeListModel;
 
+/**
+ *
+ * Frame.java
+ *
+ * Author: Ephraim Becker
+ *
+ * The JFrame component
+ */
 public class Frame extends JFrame {
 
+    // Constructor
     public Frame() {
         // Calls the JFrame with the title
         super("Grocery manager");
 
-        // Instantiates the components
+        // Instantiates the MenuBar
         MenuBar menuBar = new MenuBar();
+
+        // Initialize the controllers
         RecipeController recipeController = new RecipeController(menuBar, new RecipeListModel(new ArrayList<>()));
         IngredientController ingredientController = new IngredientController(menuBar);
+
+        // Initialize the header
         Header header = new Header();
+
+        // Initialize the stepper
         Stepper stepper = new Stepper(
                 recipeController.getRecipeListModel(),
                 ingredientController.getIngredientsTableModel(),
