@@ -28,9 +28,13 @@ public class Frame extends JFrame {
         // Add the menu bar to the top
         add(menuBar, BorderLayout.NORTH);
 
-        // Content panel
+        // Content panel - A JPanel with a Border Layout
         JPanel contentPanel = new JPanel(new BorderLayout());
+
+        // Puts the header at the top of the content panel
         contentPanel.add(header, BorderLayout.NORTH);
+
+        // Puts the stepper at the remaining space of the content panel
         contentPanel.add(stepper, BorderLayout.CENTER);
 
         // Add the content panel to the center
