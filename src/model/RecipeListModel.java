@@ -10,7 +10,7 @@ import javax.swing.DefaultListModel;
  * 
  * Author: Ephraim Becker
  * 
- * The recipe list model
+ * The recipe list model for the recipes list
  */
 
 public class RecipeListModel extends DefaultListModel<RecipeModel> {

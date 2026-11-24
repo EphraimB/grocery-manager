@@ -7,6 +7,14 @@ import model.IngredientsTableModel;
 import model.Unit;
 import view.MenuBar;
 
+/**
+ *
+ * IngredientController.java
+ *
+ * Author: Ephraim Becker
+ *
+ * The controller for the ingredients
+ */
 public class IngredientController {
 
     // Initialize an ArrayList of ingredients

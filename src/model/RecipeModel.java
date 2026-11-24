@@ -6,7 +6,7 @@ package model;
  *
  * Author: Ephraim Becker
  *
- * The model of the recipe
+ * The model for the recipes list
  */
 public class RecipeModel {
 

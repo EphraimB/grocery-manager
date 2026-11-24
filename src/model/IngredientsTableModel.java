@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
+/**
+ *
+ * IngredientsTableModel.java
+ *
+ * Author: Ephraim Becker
+ *
+ * The table model for the ingredients table
+ */
 public class IngredientsTableModel extends AbstractTableModel {
 
     // Class fields

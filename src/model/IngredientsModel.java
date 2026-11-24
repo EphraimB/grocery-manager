@@ -1,5 +1,13 @@
 package model;
 
+/**
+ *
+ * IngredientsModel.java
+ *
+ * Author: Ephraim Becker
+ *
+ * A model for the ingredients table
+ */
 public class IngredientsModel {
 
     // Class fields

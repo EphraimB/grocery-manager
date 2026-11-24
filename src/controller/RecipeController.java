@@ -5,6 +5,14 @@ import model.RecipeListModel;
 import model.RecipeModel;
 import view.MenuBar;
 
+/**
+ *
+ * RecipeController.java
+ *
+ * Author: Ephraim Becker
+ *
+ * The controller for the recipes
+ */
 public class RecipeController {
 
     // Class fields
