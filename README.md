@@ -98,5 +98,5 @@ The interface will use a clean, minimal design with light backgrounds, subtle co
 
 In order to start the Shopping List GUI program, you need to compile it and then run it with the following commands:
 
-1. `find src -name "*.java" -print0 | xargs -0 javac -cp "lib/hsqldb.jar" -d out`
-2. `java -cp "out:lib/hsqldb.jar" Main`
+1. `find src -name "*.java" -print0 | xargs -0 javac -d out`
+2. `java -cp "out" Main`
