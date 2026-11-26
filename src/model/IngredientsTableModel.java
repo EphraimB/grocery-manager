@@ -18,7 +18,8 @@ public class IngredientsTableModel extends AbstractTableModel {
     private final String[] columnNames = {
         "id", "Recipe id", "Ingredients", "Quantity", "Units"
     };
-    private List<IngredientsModel> ingredients = new ArrayList<>();
+    private List<IngredientsModel> allIngredients = new ArrayList<>();
+    private final List<IngredientsModel> ingredients = new ArrayList<>();
     private int id = 1;
 
     /**
@@ -28,7 +29,25 @@ public class IngredientsTableModel extends AbstractTableModel {
      */
     public IngredientsTableModel(List<IngredientsModel> ingredients) {
         // Sets the ingredients to a copy of the ingredients
-        this.ingredients = copyIngredients(ingredients);
+        this.allIngredients = copyIngredients(ingredients);
+    }
+
+    public void filterByRecipe(int recipeId) {
+        // Clears currently displayed ingredients
+        ingredients.clear();
+
+        // Loops through all ingredients
+        for (IngredientsModel ingredient : allIngredients) {
+            // Checks whether the ingredient belongs to the selected recipe
+            if (ingredient.getRecipeId() == recipeId) {
+
+                // Adds matching ingredient to the displayed list
+                ingredients.add(ingredient);
+            }
+        }
+
+        // Updates the JTable
+        fireTableDataChanged();
     }
 
     @Override
@@ -140,16 +159,7 @@ public class IngredientsTableModel extends AbstractTableModel {
      * @param ingredient The ingredient model
      */
     public void addIngredient(IngredientsModel ingredient) {
-        // Sets the id on the ingredients model with it incremented
         ingredient.setId(id++);
-
-        // Adds the ingredient to the ingredients
-        ingredients.add(ingredient);
-
-        // Sets the row to the ingredients size
-        int row = ingredients.size() - 1;
-
-        // Updates the inserted row cell
-        fireTableRowsInserted(row, row);
+        allIngredients.add(ingredient);
     }
 }

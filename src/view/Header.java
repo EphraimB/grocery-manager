@@ -32,7 +32,7 @@ public class Header extends JPanel {
         add(title);
 
         // Adds a subtitle JLabel
-        JLabel subtitle = new JLabel("A weekly grocery manager for people that don't know where to begin");
+        JLabel subtitle = new JLabel("A weekly grocery manager for people who don't know where to begin");
 
         // Centers the subtitle
         subtitle.setAlignmentX(CENTER_ALIGNMENT);

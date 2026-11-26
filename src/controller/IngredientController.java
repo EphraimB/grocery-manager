@@ -68,6 +68,7 @@ public class IngredientController {
 
             // Adds the ingredient
             ingredientsTableModel.addIngredient(ingredientModel);
+            ingredientsTableModel.filterByRecipe(selectedRecipe.getId());
         }
     }
 
@@ -87,5 +88,9 @@ public class IngredientController {
      */
     public void setSelectedRecipe(RecipeModel selectedRecipe) {
         this.selectedRecipe = selectedRecipe;
+
+        if (selectedRecipe != null) {
+            ingredientsTableModel.filterByRecipe(selectedRecipe.getId());
+        }
     }
 }
