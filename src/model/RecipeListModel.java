@@ -5,14 +5,13 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 
 /**
- * 
+ *
  * RecipeListModel.java
- * 
+ *
  * Author: Ephraim Becker
- * 
+ *
  * The recipe list model for the recipes list
  */
-
 public class RecipeListModel extends DefaultListModel<RecipeModel> {
 
     // Class field

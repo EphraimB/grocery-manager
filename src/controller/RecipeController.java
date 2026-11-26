@@ -18,7 +18,7 @@ public class RecipeController {
     // Class fields
     private final RecipeListModel recipeListModel;
     private RecipeModel selectedRecipe;
-    private int id;
+    private int id = 1;
 
     /**
      * Constructor
