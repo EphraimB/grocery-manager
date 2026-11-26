@@ -30,11 +30,18 @@ public enum Unit {
     private final String abbreviation;
     private final MeasurementType type;
 
+    /**
+     * Constructor
+     *
+     * @param abbreviation The unit abbreviation
+     * @param type The unit type
+     */
     Unit(String abbreviation, MeasurementType type) {
         this.abbreviation = abbreviation;
         this.type = type;
     }
 
+    // Exposes the fields
     public String getAbbreviation() {
         return abbreviation;
     }
