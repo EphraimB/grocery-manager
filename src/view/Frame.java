@@ -25,9 +25,10 @@ public class Frame extends JFrame {
 
         // Instantiates the MenuBar
         MenuBar menuBar = new MenuBar();
+        RecipeListModel recipeListModel = new RecipeListModel(new ArrayList<>());
 
         // Initialize the controllers
-        RecipeController recipeController = new RecipeController(menuBar, new RecipeListModel(new ArrayList<>()));
+        RecipeController recipeController = new RecipeController(menuBar, recipeListModel);
         IngredientController ingredientController = new IngredientController(menuBar, this);
 
         // Initialize the header
@@ -37,7 +38,8 @@ public class Frame extends JFrame {
         Stepper stepper = new Stepper(
                 recipeController.getRecipeListModel(),
                 ingredientController.getIngredientsTableModel(),
-                recipeController
+                recipeController,
+                ingredientController
         );
 
         // Add the menu bar to the top

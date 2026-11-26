@@ -39,8 +39,8 @@ public class RecipeController {
      *
      * @param recipe The recipe model
      */
-    public void setSelectedRecipe(RecipeModel recipeModel) {
-        selectedRecipe = recipeModel;
+    public void setSelectedRecipe(RecipeModel selectedRecipe) {
+        this.selectedRecipe = selectedRecipe;
     }
 
     /**

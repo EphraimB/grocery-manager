@@ -12,6 +12,7 @@ public class IngredientsModel {
 
     // Class fields
     private int id;
+    private int recipeId;
     private String ingredients;
     private double quantity;
     private Unit units;
@@ -20,12 +21,14 @@ public class IngredientsModel {
      * Constructor
      *
      * @param id The id
+     * @param recipeId The id of the recipe
      * @param ingredients The ingredient
      * @param quantity The quantity
      * @param units The unit
      */
-    public IngredientsModel(int id, String ingredients, double quantity, Unit units) {
+    public IngredientsModel(int id, int recipeId, String ingredients, double quantity, Unit units) {
         this.id = id;
+        this.recipeId = recipeId;
         this.ingredients = ingredients;
         this.quantity = quantity;
         this.units = units;
@@ -34,6 +37,10 @@ public class IngredientsModel {
     // Getters
     public int getId() {
         return this.id;
+    }
+
+    public int getRecipeId() {
+        return this.recipeId;
     }
 
     public String getIngredients() {
@@ -50,6 +57,10 @@ public class IngredientsModel {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setRecipeId(int recipeId) {
+        this.recipeId = recipeId;
     }
 
     // Setters

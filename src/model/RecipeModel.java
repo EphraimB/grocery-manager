@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * RecipeModel.java
@@ -13,6 +16,7 @@ public class RecipeModel {
     // Class fields
     private final int id;
     private final String name;
+    private List<IngredientsModel> ingredients = new ArrayList<>();
 
     /**
      * Constructor
@@ -38,5 +42,13 @@ public class RecipeModel {
     @Override
     public String toString() {
         return name;
+    }
+
+    public void addIngredient(IngredientsModel ingredient) {
+        ingredients.add(ingredient);
+    }
+
+    public List<IngredientsModel> getIngredients() {
+        return ingredients;
     }
 }

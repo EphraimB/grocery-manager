@@ -1,5 +1,6 @@
 package view;
 
+import controller.IngredientController;
 import controller.RecipeController;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
@@ -25,11 +26,12 @@ public class Stepper extends JTabbedPane {
      */
     public Stepper(RecipeListModel recipeListModel,
             IngredientsTableModel ingredientsTableModel,
-            RecipeController recipeController) {
+            RecipeController recipeController,
+            IngredientController ingredientController) {
         // Adds the recipes tab which shows the recipes and its ingredients
         addTab("Recipes", new SplitPane(recipeListModel,
                 ingredientsTableModel,
-                recipeController));
+                recipeController, ingredientController));
 
         // Adds a meals tab
         addTab("Meals", new JPanel());

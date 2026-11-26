@@ -1,5 +1,6 @@
 package view;
 
+import controller.IngredientController;
 import controller.RecipeController;
 import javax.swing.JSplitPane;
 import model.IngredientsTableModel;
@@ -28,7 +29,8 @@ public class SplitPane extends JSplitPane {
     public SplitPane(
             RecipeListModel recipeListModel,
             IngredientsTableModel ingredientsTableModel,
-            RecipeController recipeController) {
+            RecipeController recipeController,
+            IngredientController ingredientController) {
 
         // Makes it split horizontally
         super(JSplitPane.HORIZONTAL_SPLIT);
@@ -41,6 +43,7 @@ public class SplitPane extends JSplitPane {
                 recipeListModel,
                 selectedRecipe -> {
                     recipeController.setSelectedRecipe(selectedRecipe);
+                    ingredientController.setSelectedRecipe(selectedRecipe);
 
                     // Shows a placeholder or an ingredients table depending
                     // on of the recipe is selected

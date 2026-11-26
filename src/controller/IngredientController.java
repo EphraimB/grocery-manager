@@ -5,6 +5,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import model.IngredientsModel;
 import model.IngredientsTableModel;
+import model.RecipeModel;
 import model.Unit;
 import view.MenuBar;
 import view.NewIngredientDialog;
@@ -18,6 +19,8 @@ import view.NewIngredientDialog;
  * The controller for the ingredients
  */
 public class IngredientController {
+
+    private RecipeModel selectedRecipe;
 
     // Initialize an ArrayList of ingredients
     private final List<IngredientsModel> ingredients = new ArrayList<>();
@@ -39,7 +42,6 @@ public class IngredientController {
      * Adds an ingredient to the ingredients JTable
      */
     private void addIngredient(JFrame frame) {
-
         NewIngredientDialog newIngredientDialog
                 = new NewIngredientDialog(frame);
 
@@ -47,6 +49,7 @@ public class IngredientController {
 
             IngredientsModel ingredientModel = new IngredientsModel(
                     0,
+                    selectedRecipe.getId(),
                     newIngredientDialog.getIngredient().getText(),
                     (double) newIngredientDialog.getQuantity().getValue(),
                     (Unit) newIngredientDialog.getUnit().getSelectedItem()
@@ -63,5 +66,9 @@ public class IngredientController {
      */
     public IngredientsTableModel getIngredientsTableModel() {
         return ingredientsTableModel;
+    }
+
+    public void setSelectedRecipe(RecipeModel selectedRecipe) {
+        this.selectedRecipe = selectedRecipe;
     }
 }

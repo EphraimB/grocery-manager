@@ -16,7 +16,7 @@ public class IngredientsTableModel extends AbstractTableModel {
 
     // Class fields
     private final String[] columnNames = {
-        "id", "Ingredients", "Quantity", "Units"
+        "id", "Recipe id", "Ingredients", "Quantity", "Units"
     };
     private List<IngredientsModel> ingredients = new ArrayList<>();
     private int id = 1;
@@ -50,10 +50,12 @@ public class IngredientsTableModel extends AbstractTableModel {
             case 0 ->
                 ingredientsModel.getId();
             case 1 ->
-                ingredientsModel.getIngredients();
+                ingredientsModel.getRecipeId();
             case 2 ->
-                ingredientsModel.getQuantity();
+                ingredientsModel.getIngredients();
             case 3 ->
+                ingredientsModel.getQuantity();
+            case 4 ->
                 ingredientsModel.getUnits();
             default ->
                 null;
@@ -67,10 +69,12 @@ public class IngredientsTableModel extends AbstractTableModel {
         // Sets the values of the columns accordingly to the column value
         switch (col) {
             case 1 ->
-                ingredientsModel.setIngredients(value.toString());
+                ingredientsModel.setRecipeId((int) value);
             case 2 ->
-                ingredientsModel.setQuantity(Double.parseDouble(value.toString()));
+                ingredientsModel.setIngredients(value.toString());
             case 3 ->
+                ingredientsModel.setQuantity(Double.parseDouble(value.toString()));
+            case 4 ->
                 ingredientsModel.setUnits((Unit) value);
         }
 
@@ -90,10 +94,12 @@ public class IngredientsTableModel extends AbstractTableModel {
             case 0 ->
                 Integer.class;
             case 1 ->
-                String.class;
+                Integer.class;
             case 2 ->
-                Double.class;
+                String.class;
             case 3 ->
+                Double.class;
+            case 4 ->
                 Unit.class;
             default ->
                 Object.class;
@@ -103,7 +109,7 @@ public class IngredientsTableModel extends AbstractTableModel {
     @Override
     public boolean isCellEditable(int row, int col) {
         // Makes every column except the first one editable
-        return col != 0;
+        return col > 1;
     }
 
     /**
@@ -120,7 +126,7 @@ public class IngredientsTableModel extends AbstractTableModel {
         // Loops through the ingredients
         for (IngredientsModel ingredient : ingredients) {
             // Adds the initialized ingredients model to the list of ingredients
-            copy.add(new IngredientsModel(ingredient.getId(), ingredient.getIngredients(), ingredient.getQuantity(), ingredient.getUnits()
+            copy.add(new IngredientsModel(ingredient.getId(), ingredient.getRecipeId(), ingredient.getIngredients(), ingredient.getQuantity(), ingredient.getUnits()
             ));
         }
 
