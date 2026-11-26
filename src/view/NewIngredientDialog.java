@@ -29,7 +29,7 @@ public class NewIngredientDialog extends JDialog {
         super(frame, "New Ingredient", true);
 
         ingredientTextField = new JTextField();
-        quantitySpinner = new JSpinner(new SpinnerNumberModel(1, 1, 100, 0.5));
+        quantitySpinner = new JSpinner(new SpinnerNumberModel(1, 0.5, 100, 0.5));
         unitComboBox = new JComboBox<>(Unit.values());
 
         // Create an array of the text and components to be displayed.
@@ -40,6 +40,16 @@ public class NewIngredientDialog extends JDialog {
 
         optionPane = new JOptionPane(array);
 
+        optionPane.addPropertyChangeListener(event -> {
+            if (event.getSource() == optionPane
+                    && JOptionPane.VALUE_PROPERTY.equals(event.getPropertyName())
+                    && isVisible()) {
+
+                setVisible(false);
+                dispose();
+            }
+        });
+
         // Make this dialog display it.
         setContentPane(optionPane);
 
@@ -48,12 +58,11 @@ public class NewIngredientDialog extends JDialog {
     }
 
     public boolean showDialog() {
+        optionPane.setValue(JOptionPane.UNINITIALIZED_VALUE);
         setVisible(true);
 
-        Object value = optionPane.getValue();
-
-        return value != null
-                && value.equals(JOptionPane.OK_OPTION);
+        return optionPane.getValue() != null
+                && optionPane.getValue().equals(JOptionPane.OK_OPTION);
     }
 
     public void closeDialog() {
