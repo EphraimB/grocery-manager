@@ -16,7 +16,7 @@ public class RecipeModel {
     // Class fields
     private final int id;
     private final String name;
-    private List<IngredientsModel> ingredients = new ArrayList<>();
+    private final List<IngredientsModel> ingredients = new ArrayList<>();
 
     /**
      * Constructor

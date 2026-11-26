@@ -3,6 +3,7 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import model.IngredientsModel;
 import model.IngredientsTableModel;
 import model.RecipeModel;
@@ -42,6 +43,11 @@ public class IngredientController {
      * Adds an ingredient to the ingredients JTable
      */
     private void addIngredient(JFrame frame) {
+        if (selectedRecipe == null) {
+            JOptionPane.showMessageDialog(frame, "Please select a recipe first.");
+            return;
+        }
+
         NewIngredientDialog newIngredientDialog
                 = new NewIngredientDialog(frame);
 
