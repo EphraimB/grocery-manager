@@ -44,10 +44,20 @@ public class RecipeModel {
         return name;
     }
 
+    /**
+     * Adds the ingredient to the ingredients
+     *
+     * @param ingredient The ingredient to be added
+     */
     public void addIngredient(IngredientsModel ingredient) {
         ingredients.add(ingredient);
     }
 
+    /**
+     * Exposes the ingredients
+     *
+     * @return The list of ingredients
+     */
     public List<IngredientsModel> getIngredients() {
         return ingredients;
     }

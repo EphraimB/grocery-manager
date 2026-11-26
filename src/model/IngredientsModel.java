@@ -55,6 +55,7 @@ public class IngredientsModel {
         return this.units;
     }
 
+    // Setters
     public void setId(int id) {
         this.id = id;
     }
@@ -63,7 +64,6 @@ public class IngredientsModel {
         this.recipeId = recipeId;
     }
 
-    // Setters
     public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
