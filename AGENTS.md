@@ -25,3 +25,6 @@ https://chatgpt.com/share/6b0559c6-2d00-83ea-8c73-21a876a34e2c
 
 I got stuck on making a custom JDialog so I got help from ChatGPT:
 https://chatgpt.com/share/6b082b83-1098-83ea-84f8-c0f465bae90d
+
+I needed help connecting ingredients to their corresponding recipes:
+https://chatgpt.com/share/6b08738b-d8ac-83e9-ab49-355abc6061fa
