@@ -22,7 +22,7 @@ public class IngredientsModel {
      * @param id The id
      * @param ingredients The ingredient
      * @param quantity The quantity
-     * @param units
+     * @param units The unit
      */
     public IngredientsModel(int id, String ingredients, double quantity, Unit units) {
         this.id = id;

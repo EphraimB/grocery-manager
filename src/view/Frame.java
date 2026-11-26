@@ -28,7 +28,7 @@ public class Frame extends JFrame {
 
         // Initialize the controllers
         RecipeController recipeController = new RecipeController(menuBar, new RecipeListModel(new ArrayList<>()));
-        IngredientController ingredientController = new IngredientController(menuBar);
+        IngredientController ingredientController = new IngredientController(menuBar, this);
 
         // Initialize the header
         Header header = new Header();
